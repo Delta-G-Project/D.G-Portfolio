@@ -1,159 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delta Graduation Project 2025</title>
+  <!-- Link to Tailwind CSS CDN for styling -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to Anime.js for advanced animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <style>
-    /* Background Gradient Animation */
+    /* Custom styles for animations and professional design */
     body {
       background: linear-gradient(135deg, #0f172a, #1e3a8a, #0369a1);
       background-size: 400% 400%;
       animation: gradientMove 20s ease infinite;
+      font-family: 'Inter', sans-serif; /* Using a modern font */
     }
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    /* Logo Glow */
-    .logo-container {
-      filter: drop-shadow(0 0 20px cyan);
+    .logo-glow {
+      filter: drop-shadow(0 0 30px #06b6d4); /* A more pronounced glow */
+    }
+    .section-animate {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .text-shadow-effect {
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    }
+    .shine-effect::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        transform: rotate(45deg);
+        transition: transform 0.8s ease-in-out;
+        opacity: 0;
+    }
+    .shine-effect:hover::after {
+        transform: rotate(225deg);
+        opacity: 1;
+    }
+    /* Simple but effective card hover animation */
+    .card-hover:hover {
+        transform: scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body class="text-white font-sans">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md z-50 shadow-lg">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold text-cyan-300">Delta Project</h1>
+  <nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md z-50 shadow-lg transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
+      <h1 class="text-xl md:text-2xl font-bold text-cyan-300">Delta Project</h1>
       <div class="space-x-6 hidden md:flex">
-        <a href="#home" class="hover:text-cyan-300">Home</a>
-        <a href="#about" class="hover:text-cyan-300">About</a>
-        <a href="#domains" class="hover:text-cyan-300">Domains</a>
-        <a href="#idea" class="hover:text-cyan-300">Idea</a>
-        <a href="#objectives" class="hover:text-cyan-300">Objectives</a>
-        <a href="#team" class="hover:text-cyan-300">Team</a>
-        <a href="#final" class="hover:text-cyan-300">Vision</a>
-        <a href="#contact" class="hover:text-cyan-300">Contact</a>
+        <a href="#home" class="hover:text-cyan-300 transition-colors duration-300">Home</a>
+        <a href="#about" class="hover:text-cyan-300 transition-colors duration-300">About</a>
+        <a href="#domains" class="hover:text-cyan-300 transition-colors duration-300">Domains</a>
+        <a href="#idea" class="hover:text-cyan-300 transition-colors duration-300">Idea</a>
+        <a href="#objectives" class="hover:text-cyan-300 transition-colors duration-300">Objectives</a>
+        <a href="#team" class="hover:text-cyan-300 transition-colors duration-300">Team</a>
+        <a href="#vision" class="hover:text-cyan-300 transition-colors duration-300">Vision</a>
+        <a href="#contact" class="hover:text-cyan-300 transition-colors duration-300">Contact</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4">
-    <img id="logo" src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" 
-      alt="Delta Logo" class="w-48 mb-6 opacity-0 logo-container"/>
-    <h1 class="text-4xl md:text-6xl font-extrabold">Delta Graduation Project 2025</h1>
-    <p class="text-lg md:text-xl mt-4 max-w-2xl">
-      Smart Intrusion Detection System — AI, Cybersecurity, Networking, Frontend & Backend
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+    <div class="w-48 mb-6 logo-glow z-10">
+      <img id="logo" src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png"
+        alt="Delta Logo" class="w-full opacity-0" />
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-7xl font-extrabold text-white text-shadow-effect leading-tight">
+        Delta Graduation Project 2025
+      </h1>
+      <p class="text-md md:text-xl mt-4 max-w-2xl mx-auto text-gray-300 text-shadow-effect">
+        Smart Intrusion Detection System — AI, Cybersecurity, Networking, Frontend & Backend
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-6xl mx-auto py-20 px-6 section-animate">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-400 pb-2">About</h2>
+    <p class="leading-relaxed text-lg text-gray-200">
+      The Smart Intrusion Detection System (SIDS) is a graduation project designed to detect, analyze,
+      and respond to intrusions in real-time. It integrates cutting-edge technologies from **AI**, **Networking**, **Cybersecurity**, **Frontend**,
+      and **Backend** to create one cohesive, scalable, secure, and innovative system.
     </p>
   </section>
 
-  <!-- About -->
-  <section id="about" class="max-w-6xl mx-auto py-20 px-6">
-    <h2 class="text-3xl font-bold mb-6 text-cyan-300">About</h2>
-    <p class="leading-relaxed">
-      The Smart Intrusion Detection System (SIDS) is a graduation project designed to detect, analyze, 
-      and respond to intrusions in real-time. It integrates AI, Networking, Cybersecurity, Frontend, 
-      and Backend into one cohesive system — scalable, secure, and innovative.
-    </p>
-  </section>
-
-  <!-- Domains -->
+  <!-- Domains Section -->
   <section id="domains" class="py-20 px-6 bg-black/40">
     <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Domains</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div class="bg-white/10 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold text-cyan-200 mb-2">Cybersecurity</h4>
-        <p>Secures data, applies threat analysis, and ensures safe communication.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Cybersecurity Card -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate">
+        <div class="text-3xl text-cyan-200 mb-4">🛡️</div>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Cybersecurity</h4>
+        <p class="text-gray-300">Secures data, applies threat analysis, and ensures safe communication across all system layers.</p>
       </div>
-      <div class="bg-white/10 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold text-cyan-200 mb-2">Networking</h4>
-        <p>Monitors and analyzes network traffic to detect anomalies.</p>
+      <!-- Networking Card -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 100ms;">
+        <div class="text-3xl text-cyan-200 mb-4">🌐</div>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Networking</h4>
+        <p class="text-gray-300">Monitors and analyzes network traffic in real-time to detect anomalous behavior and potential threats.</p>
       </div>
-      <div class="bg-white/10 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold text-cyan-200 mb-2">Artificial Intelligence</h4>
-        <p>Detects anomalies and predicts threats using ML models.</p>
+      <!-- AI Card -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 200ms;">
+        <div class="text-3xl text-cyan-200 mb-4">🧠</div>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Artificial Intelligence</h4>
+        <p class="text-gray-300">Leverages advanced machine learning models to predict and detect threats with high accuracy.</p>
       </div>
-      <div class="bg-white/10 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold text-cyan-200 mb-2">Frontend</h4>
-        <p>Provides an intuitive dashboard for monitoring and alerts.</p>
+      <!-- Frontend Card -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 300ms;">
+        <div class="text-3xl text-cyan-200 mb-4">🖥️</div>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Frontend</h4>
+        <p class="text-gray-300">Provides an intuitive and responsive dashboard for real-time monitoring and easy management of alerts.</p>
       </div>
-      <div class="bg-white/10 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h4 class="text-xl font-semibold text-cyan-200 mb-2">Backend</h4>
-        <p>Processes data, integrates AI models, and powers the system.</p>
+      <!-- Backend Card -->
+      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 400ms;">
+        <div class="text-3xl text-cyan-200 mb-4">⚙️</div>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Backend</h4>
+        <p class="text-gray-300">Serves as the core engine, processing data, integrating AI models, and powering the entire system.</p>
       </div>
     </div>
   </section>
 
-  <!-- Project Idea -->
-  <section id="idea" class="max-w-6xl mx-auto py-20 px-6">
-    <h2 class="text-3xl font-bold mb-6 text-cyan-300">Project Idea</h2>
-    <p>
-      SIDS leverages AI to proactively detect anomalies in network traffic. 
-      It combines real-time monitoring, automated responses, and a user-friendly 
-      interface to help organizations strengthen their cybersecurity posture.
+  <!-- Project Idea Section -->
+  <section id="idea" class="max-w-6xl mx-auto py-20 px-6 section-animate">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-400 pb-2">Project Idea</h2>
+    <p class="leading-relaxed text-lg text-gray-200">
+      SIDS leverages AI to proactively detect anomalies in network traffic. It combines real-time monitoring,
+      automated responses, and a user-friendly interface to empower organizations to strengthen their cybersecurity posture
+      and mitigate threats before they escalate.
     </p>
   </section>
 
-  <!-- Objectives -->
+  <!-- Objectives Section -->
   <section id="objectives" class="py-20 px-6 bg-black/40">
     <h2 class="text-3xl font-bold mb-6 text-center text-cyan-300">Objectives</h2>
-    <ul class="list-disc pl-10 space-y-2 max-w-3xl mx-auto">
-      <li>Real-Time Threat Detection</li>
-      <li>Scalability for small to large networks</li>
-      <li>User-Friendly Monitoring Dashboard</li>
-      <li>Automation via AI-driven detection</li>
-      <li>Seamless Integration across domains</li>
+    <ul class="list-none space-y-4 max-w-3xl mx-auto text-lg text-gray-200">
+      <li class="flex items-start section-animate">
+        <span class="text-cyan-300 text-2xl mr-4">✓</span>
+        <span>**Real-Time Threat Detection:** Develop a system capable of identifying threats as they happen.</span>
+      </li>
+      <li class="flex items-start section-animate" style="transition-delay: 100ms;">
+        <span class="text-cyan-300 text-2xl mr-4">✓</span>
+        <span>**Scalability:** Ensure the system can be seamlessly scaled for networks of any size.</span>
+      </li>
+      <li class="flex items-start section-animate" style="transition-delay: 200ms;">
+        <span class="text-cyan-300 text-2xl mr-4">✓</span>
+        <span>**Intuitive Dashboard:** Create a user-friendly interface for easy monitoring and alerts.</span>
+      </li>
+      <li class="flex items-start section-animate" style="transition-delay: 300ms;">
+        <span class="text-cyan-300 text-2xl mr-4">✓</span>
+        <span>**Automation:** Utilize AI to automate threat detection and response processes.</span>
+      </li>
+      <li class="flex items-start section-animate" style="transition-delay: 400ms;">
+        <span class="text-cyan-300 text-2xl mr-4">✓</span>
+        <span>**Seamless Integration:** Achieve flawless integration across all five project domains.</span>
+      </li>
     </ul>
   </section>
 
-  <!-- Team -->
-  <section id="team" class="py-20 px-6">
+  <!-- Team Section -->
+  <section id="team" class="py-20 px-6 section-animate">
     <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Our Team</h2>
-    <div id="teamList" class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-center"></div>
+    <div id="teamList" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-center"></div>
   </section>
 
-  <!-- Final Image -->
-  <section id="final" class="py-20 flex flex-col items-center text-center px-6">
-    <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" 
-      alt="Delta Vision" class="w-72 md:w-96 mb-6 rounded-xl shadow-2xl"/>
-    <p class="text-xl md:text-2xl font-semibold text-cyan-300">
+  <!-- Final Image / Vision Section -->
+  <section id="vision" class="py-20 flex flex-col items-center text-center px-6 bg-black/40 section-animate">
+    <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png"
+      alt="Delta Vision" class="w-72 md:w-96 mb-6 rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105"/>
+    <p class="text-xl md:text-3xl font-semibold text-cyan-300 text-shadow-effect">
       Innovating with AI, Security, and Technology — Delta Graduation Project 2025.
     </p>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-20 px-6 bg-black/40">
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-6 section-animate">
     <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Get in Touch</h2>
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
       
       <!-- Contact Form -->
-      <form class="space-y-4 bg-white/10 p-6 rounded-xl shadow-lg">
-        <input type="text" placeholder="Your Name" 
-          class="w-full p-3 rounded-lg bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
-        <input type="email" placeholder="Your Email" 
-          class="w-full p-3 rounded-lg bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
-        <textarea placeholder="Your Message" rows="5" 
-          class="w-full p-3 rounded-lg bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
-        <button type="submit" 
-          class="w-full py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-lg transition">
+      <form class="space-y-6 bg-white/10 p-8 rounded-3xl shadow-lg border border-cyan-500">
+        <input type="text" placeholder="Your Name"
+          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+        <input type="email" placeholder="Your Email"
+          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+        <textarea placeholder="Your Message" rows="6"
+          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+        <button type="submit"
+          class="relative w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden shine-effect">
           Send Message
         </button>
       </form>
 
       <!-- Contact Info -->
-      <div class="flex flex-col items-center justify-center text-center space-y-6">
-        <p class="text-lg">We’d love to hear from you!  
-          Connect with us through email or follow our work on GitHub & LinkedIn.</p>
-        <div class="flex space-x-6 text-3xl">
-          <a href="mailto:abdulrhman.abdulghaffar001@gmail.com" target="_blank" class="hover:text-cyan-300">📧</a>
-          <a href="https://github.com/" target="_blank" class="hover:text-cyan-300">💻</a>
-          <a href="https://linkedin.com/" target="_blank" class="hover:text-cyan-300">🔗</a>
+      <div class="flex flex-col items-center justify-center text-center space-y-6 text-gray-200">
+        <p class="text-lg leading-relaxed">We’d love to hear from you! Connect with us through email or follow our work on GitHub & LinkedIn.</p>
+        <div class="flex space-x-8 text-4xl">
+          <a href="mailto:abdulrhman.abdulghaffar001@gmail.com" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">📧</a>
+          <a href="https://github.com/" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">💻</a>
+          <a href="https://linkedin.com/" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">🔗</a>
         </div>
       </div>
 
@@ -161,43 +221,72 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 text-center py-6">
+  <footer class="bg-gray-900/70 text-gray-400 text-center py-8">
     © 2025 Delta University – Smart Intrusion Detection System
   </footer>
 
   <script>
     // Team Members
     const members = [
-      "AbdulRhman AbdulGhaffar","AbdulRhman Fathy","AbdulRhman Mohammed","AbdulRhman Yousry",
-      "Mahmoud Alhaz","Ahmed Galal","Ibrahim Mohammed","Hisham Mohammed","Yousef Elsaid",
-      "Shimaa Fouad","Heba Ashraf","Wafaa Mohammed","Aya Hany","Sara Anwar","Shahd Reda",
-      "Sara Ibrahim","Fatima Elsaid","Israa Ibrahim","Rofaida Ali","Sally Gamal","Sheeren Hany","Toqa Abdulmaksoud"
+      "AbdulRhman AbdulGhaffar", "AbdulRhman Fathy", "AbdulRhman Mohammed", "AbdulRhman Yousry",
+      "Mahmoud Alhaz", "Ahmed Galal", "Ibrahim Mohammed", "Hisham Mohammed", "Yousef Elsaid",
+      "Shimaa Fouad", "Heba Ashraf", "Wafaa Mohammed", "Aya Hany", "Sara Anwar", "Shahd Reda",
+      "Sara Ibrahim", "Fatima Elsaid", "Israa Ibrahim", "Rofaida Ali", "Sally Gamal", "Sheeren Hany", "Toqa Abdulmaksoud"
     ];
     const teamList = document.getElementById("teamList");
     members.forEach(name => {
       const card = document.createElement("div");
-      card.className = "p-6 bg-white/10 text-white rounded-xl shadow-lg text-lg font-semibold opacity-0 transform";
+      card.className = "p-6 bg-white/10 text-white rounded-xl shadow-lg text-lg font-semibold transform transition-all duration-300 opacity-0 card-hover";
       card.textContent = name;
       teamList.appendChild(card);
     });
 
-    // Animate logo
+    // Animate logo on page load
     anime({
       targets: "#logo",
-      opacity: [0,1],
-      scale: [0.5,1],
+      opacity: [0, 1],
+      scale: [0.5, 1],
       rotate: "1turn",
       duration: 2000,
       easing: "easeOutElastic(1, .8)"
     });
 
-    // Animate team cards
-    anime({
-      targets: "#teamList div",
-      opacity: [0,1],
-      translateY: [50,0],
-      delay: anime.stagger(120),
-      easing: "easeOutExpo"
+    // Animate elements as they appear in the viewport using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target;
+          // Animate the section
+          anime({
+            targets: target,
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 1000,
+            easing: "easeOutExpo"
+          });
+          // Animate cards within the section, if any
+          const cards = target.querySelectorAll(".card-hover");
+          if (cards.length > 0) {
+            anime({
+              targets: cards,
+              opacity: [0, 1],
+              translateY: [50, 0],
+              delay: anime.stagger(100),
+              easing: "easeOutExpo"
+            });
+          }
+          // Unobserve the element after animation
+          observer.unobserve(target);
+        }
+      });
+    }, {
+      rootMargin: "0px",
+      threshold: 0.2 // Trigger when 20% of the element is visible
+    });
+
+    // Observe all sections with the 'section-animate' class
+    document.querySelectorAll('.section-animate').forEach(section => {
+      observer.observe(section);
     });
   </script>
 </body>
