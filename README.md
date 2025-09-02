@@ -1,98 +1,94 @@
 # 🚀 Delta Graduation Project 2025  
 
-**Smart Intrusion Detection System (SIDS)**  
-A multidisciplinary graduation project developed by Delta University students.  
-This project integrates cutting-edge technologies across:  
+<p align="center">
+  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Delta Logo" width="200"/>
+</p>
 
-- 🖥️ Frontend Development  
-- ⚙️ Backend Development  
-- 🤖 Artificial Intelligence  
-- 🌐 Networking  
-- 🔐 Cybersecurity  
+<p align="center">
+  <b>Smart Intrusion Detection System (SIDS)</b><br>
+  Innovating with AI, Security, and Technology — Delta Graduation Project 2025.
+</p>
 
 ---
 
 ## 📌 Project Overview  
-The **Smart Intrusion Detection System (SIDS)** is designed to **detect, analyze, and respond** to network intrusions in real-time.  
-It leverages **AI-powered anomaly detection**, **secure networking protocols**, and an **interactive dashboard** to provide scalable and future-ready protection.  
+The **Smart Intrusion Detection System (SIDS)** is a multidisciplinary project designed to **detect, analyze, and respond** to cyber intrusions in real-time.  
+
+It integrates:  
+- 🖥️ Frontend for user interaction  
+- ⚙️ Backend for processing and management  
+- 🤖 AI for anomaly detection and prediction  
+- 🌐 Networking for monitoring traffic  
+- 🔐 Cybersecurity for ensuring system protection  
 
 ---
 
-## ✨ Features  
-- ⚡ Real-Time Threat Detection  
-- 🤖 Machine Learning for Anomaly Analysis  
-- 🔐 Cybersecurity & Secure Communication  
-- 🌐 Networking Traffic Monitoring  
-- 📊 Interactive Frontend Dashboard  
-- ⚙️ Scalable Backend Infrastructure  
+## ✨ Key Features  
+- ⚡ **Real-Time Intrusion Detection**  
+- 🤖 **Machine Learning–Based Anomaly Analysis**  
+- 🔐 **Advanced Cybersecurity Protection**  
+- 🌐 **Network Traffic Monitoring**  
+- 📊 **Interactive Dashboard (Frontend)**  
+- ⚙️ **Scalable Backend Infrastructure**  
 
 ---
 
 ## 📂 Repository Structure  
-📂 delta-graduation-project-2025
- ├── index.html
- ├── assets/
- │    ├── logo.png
- │    ├── final-image.png
- │    └── screenshots/
- ├── docs/
- │    └── Smart Intrusion Detection System.pdf
- ├── README.md
- ├── LICENSE
- └── .gitignore
-
 
 ---
 
-## 👨‍💻 Team Members
-- AbdulRhman AbdulGhaffar  
-- AbdulRhman Fathy  
-- AbdulRhman Mohammed  
-- AbdulRhman Yousry  
-- Mahmoud Alhaz  
-- Ahmed Galal  
-- Ibrahim Mohammed  
-- Hisham Mohammed  
-- Yousef Elsaid  
-- Shimaa Fouad  
-- Heba Ashraf  
-- Wafaa Mohammed  
-- Aya Hany  
-- Sara Anwar  
-- Shahd Reda  
-- Sara Ibrahim  
-- Fatima Elsaid  
-- Israa Ibrahim  
-- Rofaida Ali  
-- Sally Gamal  
-- Sheeren Hany  
-- Toqa Abdulmaksoud  
+## 👨‍💻 Team Members  
+
+| Member | Member | Member |
+|--------|--------|--------|
+| AbdulRhman AbdulGhaffar | AbdulRhman Fathy | AbdulRhman Mohammed |
+| AbdulRhman Yousry | Mahmoud Alhaz | Ahmed Galal |
+| Ibrahim Mohammed | Hisham Mohammed | Yousef Elsaid |
+| Shimaa Fouad | Heba Ashraf | Wafaa Mohammed |
+| Aya Hany | Sara Anwar | Shahd Reda |
+| Sara Ibrahim | Fatima Elsaid | Israa Ibrahim |
+| Rofaida Ali | Sally Gamal | Sheeren Hany |
+| Toqa Abdulmaksoud | | |
 
 ---
 
-## 📸 Screenshots
-![Logo](assets/logo.png)
-![Vision](assets/final-image.png)
+## 📸 Screenshots  
+
+### 🔹 Project Logo  
+<p align="center">
+  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Logo" width="220"/>
+</p>
+
+### 🔹 Vision  
+<p align="center">
+  <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" alt="Vision" width="400"/>
+</p>
+
+<p align="center"><i>“Innovating with AI, Security, and Technology — Delta Graduation Project 2025.”</i></p>
 
 ---
 
-## 📖 Documentation
-Full documentation available in [`/docs`](./docs).  
-📄 [Smart Intrusion Detection System PDF](./docs/Smart%20Intrusion%20Detection%20System.pdf)
+## 📖 Documentation  
+Full documentation is available in the [`/docs`](./docs) folder.  
+
+📄 [Smart Intrusion Detection System PDF](./docs/Smart%20Intrusion%20Detection%20System.pdf)  
 
 ---
 
-## 🔗 Live Demo
-👉 [Project Website (GitHub Pages)](https://your-username.github.io/delta-graduation-project-2025)
+## 🔗 Live Demo  
+👉 [View Project Website (GitHub Pages)](https://your-username.github.io/delta-graduation-project-2025)  
 
 ---
 
-## 📬 Contact
+## 📬 Contact  
 📧 Email: **abdulrhman.abdulghaffar001@gmail.com**  
-💻 GitHub: [Your Organization](https://github.com/)  
+💻 GitHub: [Delta Org](https://github.com/)  
 🔗 LinkedIn: [Your Profile](https://linkedin.com/)  
 
+<p align="center">
+  Made with ❤️ by the Delta University Team
+</p>
+
 ---
 
-## 📜 License
-This project is licensed under the **MIT License** – feel free to use and modify.
+
