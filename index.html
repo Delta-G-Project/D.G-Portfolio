@@ -467,14 +467,11 @@
 
     teamsToGroup.forEach((group, index) => {
       const groupContainer = document.createElement("div");
-      groupContainer.className = "flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full lg:w-[90%] mx-auto";
-      if (index === 2) { // Center the last row with one item
-        groupContainer.classList.add('justify-center');
-      }
-
+      groupContainer.className = "flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full justify-center";
+      
       group.forEach(domain => {
         const teamCard = document.createElement("div");
-        teamCard.className = "w-full p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl section-animate flex-1";
+        teamCard.className = "w-full md:w-1/2 lg:w-1/3 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0 card-hover";
         const heading = document.createElement("h3");
         heading.className = "text-2xl font-semibold text-center mb-6 text-blue-300 heading-font";
         heading.textContent = domain;
