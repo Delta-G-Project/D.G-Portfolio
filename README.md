@@ -52,14 +52,9 @@ It integrates:
 
 ---
 
-## 📸 Screenshots  
 
-### 🔹 Project Logo  
-<p align="center">
-  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Logo" width="220"/>
-</p>
 
-### 🔹 Vision  
+
 <p align="center">
   <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" alt="Vision" width="400"/>
 </p>
