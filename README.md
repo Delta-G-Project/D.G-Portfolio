@@ -42,7 +42,7 @@ It combines **AI, Cybersecurity, Networking, Frontend, and Backend** into one ec
 - 📩 **Formspree** → Contact form handling  
 - ⚡ **HTML5 + JS** → Core web technologies  
 
----
+ 
 
 
 ---
@@ -62,7 +62,7 @@ It combines **AI, Cybersecurity, Networking, Frontend, and Backend** into one ec
 
 </div>
 
-
+---
 
 ## 🚦 Roadmap  
 - [x] Build core website with Tailwind & Anime.js  
@@ -70,18 +70,24 @@ It combines **AI, Cybersecurity, Networking, Frontend, and Backend** into one ec
 - [x] Integrate documentation & visuals  
 - [ ] Enhance dashboard interactivity  
 - [ ] Deploy full-featured backend APIs  
-- [ ] Expand AI anomaly detection model  
+- [ ] Expand AI anomaly detection model
 
 ---
 
-## 📬 Contact  
-📧 **abdulrhman.abdulghaffar001@gmail.com**  
-💻 GitHub: [Delta Org](https://github.com/)  
-🔗 LinkedIn: [Delta Team](https://linkedin.com/)  
+## 📬 Contact & Contribution
 
----
+Want to connect or contribute?
 
- 
+- 📧 Email: **abdulrhman.abdulghaffar001@gmail.com**
+- 💼 GitHub: [@AbdulRhmanAbdulGhaffar](https://github.com/AbdulRhmanAbdulGhaffar)
+- 🔗 LinkedIn: [AbdulRhman AbdulGhaffar](https://linkedin.com/in/abdulrhmanabdulghaffar/)
+
+To contribute:
+- Fork the repo
+- Create feature branch
+- Open pull request with a concise summary
+
+ ---
 <p align="center">
   <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" alt="Vision" width="400"/>
 </p>
