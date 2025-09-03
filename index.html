@@ -17,18 +17,46 @@
   <style>
     /* Custom styles for professional design and animations */
     body {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a, #0369a1);
-      background-size: 400% 400%;
-      animation: gradientMove 20s ease infinite;
+      background: #0f172a;
       font-family: 'Inter', sans-serif;
+      position: relative;
+    }
+    /* Cybersecurity and AI-themed background pattern with animated lines */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+          radial-gradient(circle at top left, #1e3a8a, transparent),
+          radial-gradient(circle at bottom right, #0369a1, transparent),
+          linear-gradient(135deg, rgba(6, 182, 212, 0.1), transparent 50%),
+          linear-gradient(-45deg, rgba(6, 182, 212, 0.1), transparent 50%),
+          /* Animated network grid pattern */
+          linear-gradient(to right, #1e3a8a 1px, transparent 1px),
+          linear-gradient(to bottom, #1e3a8a 1px, transparent 1px);
+      background-size: 80% 80%, 80% 80%, 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+      background-repeat: no-repeat;
+      background-position: top left, bottom right, center center, center center, center center, center center;
+      opacity: 0.4;
+      z-index: -1;
+      animation: backgroundFlow 40s infinite, gridPan 20s infinite linear;
+    }
+    @keyframes backgroundFlow {
+      0% { background-position: top left, bottom right, 0% 0%, 0% 0%; }
+      25% { background-position: top right, bottom left, 100% 0%, 0% 100%; }
+      50% { background-position: bottom right, top left, 100% 100%, 0% 0%; }
+      75% { background-position: bottom left, top right, 0% 100%, 100% 0%; }
+      100% { background-position: top left, bottom right, 0% 0%, 0% 0%; }
+    }
+    @keyframes gridPan {
+      0% { background-position: center center, center center, 0 0, 0 0; }
+      100% { background-position: center center, center center, -50px -50px, -50px -50px; }
     }
     .heading-font {
         font-family: 'Poppins', sans-serif;
-    }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
     .logo-glow {
       filter: drop-shadow(0 0 40px #06b6d4);
@@ -79,19 +107,169 @@
       bottom: -10px;
       width: 0;
       height: 4px;
-      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      background: linear-gradient(90deg, #8a2be2, #4b0082); /* Cybersecurity-themed gradient */
       border-radius: 2px;
       transition: width 0.8s ease-in-out;
     }
     .animate-underline::after {
       width: 100%;
     }
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-content {
+      background: #1a202c;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      border: 1px solid #3b82f6;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      transform: scale(0.8);
+      transition: transform 0.5s ease-in-out;
+    }
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+    .typing-effect {
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid transparent;
+      animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #06b6d4; }
+    }
+    /* Animated hacker effect with matrix code */
+    .hacker-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 2s ease-in-out;
+    }
+    .hacker-background.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .hacker-text {
+      color: #00ff41;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      white-space: pre;
+    }
+    .hacker-animation-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      z-index: 60;
+    }
+    .hamburger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: white;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 0;
+    }
+    .hamburger-line:nth-child(1) { top: 6px; }
+    .hamburger-line:nth-child(2) { top: 12px; }
+    .hamburger-line:nth-child(3) { top: 18px; }
+
+    .hamburger.open .hamburger-line:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .hamburger.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open .hamburger-line:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      z-index: 55;
+      padding-top: 5rem;
+      transition: right 0.5s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-menu.active {
+      right: 0;
+    }
   </style>
 </head>
 <body class="text-white font-sans overflow-x-hidden">
 
-  <!-- Floating Particles Canvas -->
-  <canvas id="particles" class="fixed inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+  <!-- Welcome Modal -->
+  <div id="welcomeModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="text-4xl font-extrabold text-cyan-300 heading-font mb-4">
+        Welcome to Delta Project
+      </h2>
+      <p id="welcomeMessage" class="text-xl text-gray-200 typing-effect"></p>
+      <button id="closeModal" class="mt-8 px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 shadow-lg shine-effect">
+        Enter
+      </button>
+    </div>
+  </div>
+
+  <!-- Hacker-themed loading screen -->
+  <div id="hackerScreen" class="hacker-background">
+    <div class="hacker-animation-container" id="matrixContainer"></div>
+    <div class="z-20 p-8 rounded-lg text-center" style="background: rgba(0,0,0,0.5);">
+      <h2 class="text-5xl font-extrabold text-green-400 heading-font mb-4 animate-pulse">SYSTEM INITIATING...</h2>
+      <p class="text-lg text-green-300 animate-pulse">ANALYZING THREATS. ESTABLISHING SECURE CONNECTION.</p>
+    </div>
+  </div>
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md z-50 shadow-lg transition-all duration-300">
@@ -108,8 +286,27 @@
         <a href="#vision" class="hover:text-cyan-300 transition-colors duration-300">Vision</a>
         <a href="#contact" class="hover:text-cyan-300 transition-colors duration-300">Contact</a>
       </div>
+      <!-- Mobile Hamburger Menu -->
+      <button id="hamburger" class="md:hidden hamburger focus:outline-none">
+        <span class="hamburger-line top-1/3"></span>
+        <span class="hamburger-line top-1/2"></span>
+        <span class="hamburger-line bottom-1/3"></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu md:hidden">
+    <a href="#home" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Home</a>
+    <a href="#about" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">About</a>
+    <a href="#domains" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Domains</a>
+    <a href="#document" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Document</a>
+    <a href="#idea" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Idea</a>
+    <a href="#objectives" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Objectives</a>
+    <a href="#team" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Team</a>
+    <a href="#vision" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Vision</a>
+    <a href="#contact" class="py-4 text-white text-lg hover:text-cyan-300 transition-colors duration-300">Contact</a>
+  </div>
 
   <!-- Hero Section -->
   <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative z-10">
@@ -381,69 +578,6 @@
   </footer>
 
   <script>
-    // Constants for particle animation
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particlesArray;
-    let w, h;
-    const maxParticles = 150;
-
-    // Class for each particle
-    class Particle {
-      constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-      update() {
-        if (this.x > w || this.x < 0) {
-          this.directionX = -this.directionX;
-        }
-        if (this.y > h || this.y < 0) {
-          this.directionY = -this.directionY;
-        }
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-      }
-    }
-
-    // Initialize particles
-    function init() {
-      w = window.innerWidth;
-      h = document.body.scrollHeight;
-      canvas.width = w;
-      canvas.height = h;
-      particlesArray = [];
-      for (let i = 0; i < maxParticles; i++) {
-        let size = (Math.random() * 2) + 1;
-        let x = (Math.random() * ((w - size * 2) - (size * 2)) + size * 2);
-        let y = (Math.random() * ((h - size * 2) - (size * 2)) + size * 2);
-        let directionX = (Math.random() * 0.5) - 0.25;
-        let directionY = (Math.random() * 0.5) - 0.25;
-        let color = 'rgba(255, 255, 255, ' + (Math.random() * 0.4 + 0.1) + ')';
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-      }
-    }
-
-    // Animation loop for particles
-    function animateParticles() {
-      requestAnimationFrame(animateParticles);
-      ctx.clearRect(0, 0, w, h);
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-      }
-    }
-
     // Team Members organized by domain
     const teams = {
         'Cybersecurity': ["AbdulRhman AbdulGhaffar", "AbdulRhman Fathy", "Heba Ashraf", "Fatima ElSaid"],
@@ -564,17 +698,90 @@
         });
       });
     });
+    // Modal welcome message typing effect
+    const welcomeMessage = "Securing the future with intelligence and technology.";
+    let i = 0;
+    const typing = () => {
+      if (i < welcomeMessage.length) {
+        document.getElementById('welcomeMessage').innerHTML += welcomeMessage.charAt(i);
+        i++;
+        setTimeout(typing, 50);
+      }
+    };
+
+    const welcomeModal = document.getElementById('welcomeModal');
+    const closeModal = document.getElementById('closeModal');
+
+    closeModal.addEventListener('click', () => {
+      anime({
+        targets: welcomeModal,
+        opacity: 0,
+        duration: 800,
+        easing: 'easeInOutQuad',
+        complete: () => {
+          welcomeModal.style.visibility = 'hidden';
+        }
+      });
+    });
+
+    // Hacker screen logic
+    const hackerScreen = document.getElementById('hackerScreen');
+    const matrixContainer = document.getElementById('matrixContainer');
+    
+    const chars = '01';
+    const numColumns = Math.floor(window.innerWidth / 20);
+    const numRows = Math.floor(window.innerHeight / 20);
+
+    const generateMatrixText = () => {
+      let text = '';
+      for (let i = 0; i < numRows * numColumns; i++) {
+        text += chars.charAt(Math.floor(Math.random() * chars.length));
+        if ((i + 1) % numColumns === 0) {
+          text += '\n';
+        }
+      }
+      return text;
+    };
+
+    const updateMatrix = () => {
+      matrixContainer.textContent = generateMatrixText();
+      setTimeout(updateMatrix, 50);
+    };
+
+    setTimeout(() => {
+      anime({
+        targets: hackerScreen,
+        opacity: 0,
+        duration: 1500,
+        easing: 'easeInOutQuad',
+        complete: () => {
+          hackerScreen.classList.add('hidden');
+          welcomeModal.classList.add('active');
+          typing();
+        }
+      });
+    }, 4000); // Wait 4 seconds before hiding hacker screen
+
+    // Mobile menu logic
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('active');
+      });
+    });
 
     window.onload = function() {
-      init();
-      animateParticles();
+      // Start hacker animation
+      updateMatrix();
     };
-    window.addEventListener('resize', () => {
-      w = window.innerWidth;
-      h = document.body.scrollHeight;
-      canvas.width = w;
-      canvas.height = h;
-    });
   </script>
 </body>
 </html>
