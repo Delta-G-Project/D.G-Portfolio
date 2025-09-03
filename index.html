@@ -4,17 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Delta Graduation Project 2025</title>
-  <!-- Link to Tailwind CSS CDN for styling -->
+  <!-- Tailwind CSS CDN for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Link to Anime.js for advanced animations -->
+  <!-- Anime.js for advanced animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts for typography: Poppins for headings, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    /* Custom styles for animations and professional design */
+    /* Custom styles for professional design and animations */
     body {
       background: linear-gradient(135deg, #0f172a, #1e3a8a, #0369a1);
       background-size: 400% 400%;
       animation: gradientMove 20s ease infinite;
-      font-family: 'Inter', sans-serif; /* Using a modern font */
+      font-family: 'Inter', sans-serif;
+    }
+    .heading-font {
+        font-family: 'Poppins', sans-serif;
     }
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
@@ -22,7 +31,7 @@
       100% { background-position: 0% 50%; }
     }
     .logo-glow {
-      filter: drop-shadow(0 0 30px #06b6d4); /* A more pronounced glow */
+      filter: drop-shadow(0 0 40px #06b6d4);
     }
     .section-animate {
       opacity: 0;
@@ -32,38 +41,67 @@
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     }
     .shine-effect::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-        transform: rotate(45deg);
-        transition: transform 0.8s ease-in-out;
-        opacity: 0;
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      transform: rotate(45deg);
+      transition: transform 0.8s ease-in-out;
+      opacity: 0;
     }
     .shine-effect:hover::after {
-        transform: rotate(225deg);
-        opacity: 1;
+      transform: rotate(225deg);
+      opacity: 1;
     }
-    /* Simple but effective card hover animation */
+    .card-hover {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
     .card-hover:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .heading-underline {
+      position: relative;
+    }
+    .heading-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      border-radius: 2px;
+      transition: width 0.8s ease-in-out;
+    }
+    .animate-underline::after {
+      width: 100%;
     }
   </style>
 </head>
-<body class="text-white font-sans">
+<body class="text-white font-sans overflow-x-hidden">
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="particles" class="fixed inset-0 w-full h-full z-0 pointer-events-none"></canvas>
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md z-50 shadow-lg transition-all duration-300">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4 md:p-6">
-      <h1 class="text-xl md:text-2xl font-bold text-cyan-300">Delta Project</h1>
+      <h1 class="text-xl md:text-2xl font-bold text-cyan-300 heading-font">Delta Project</h1>
       <div class="space-x-6 hidden md:flex">
         <a href="#home" class="hover:text-cyan-300 transition-colors duration-300">Home</a>
         <a href="#about" class="hover:text-cyan-300 transition-colors duration-300">About</a>
         <a href="#domains" class="hover:text-cyan-300 transition-colors duration-300">Domains</a>
+        <a href="#document" class="hover:text-cyan-300 transition-colors duration-300">Document</a>
         <a href="#idea" class="hover:text-cyan-300 transition-colors duration-300">Idea</a>
         <a href="#objectives" class="hover:text-cyan-300 transition-colors duration-300">Objectives</a>
         <a href="#team" class="hover:text-cyan-300 transition-colors duration-300">Team</a>
@@ -74,13 +112,13 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
-    <div class="w-48 mb-6 logo-glow z-10">
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative z-10">
+    <div class="w-48 md:w-64 mb-6 logo-glow z-10">
       <img id="logo" src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png"
-        alt="Delta Logo" class="w-full opacity-0" />
+        alt="Delta Logo" class="w-full opacity-0 scale-50" />
     </div>
     <div class="relative z-10 max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-7xl font-extrabold text-white text-shadow-effect leading-tight">
+      <h1 class="text-4xl md:text-7xl font-extrabold text-white text-shadow-effect leading-tight heading-font">
         Delta Graduation Project 2025
       </h1>
       <p class="text-md md:text-xl mt-4 max-w-2xl mx-auto text-gray-300 text-shadow-effect">
@@ -90,117 +128,228 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="max-w-6xl mx-auto py-20 px-6 section-animate">
-    <h2 class="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-400 pb-2">About</h2>
-    <p class="leading-relaxed text-lg text-gray-200">
-      The Smart Intrusion Detection System (SIDS) is a graduation project designed to detect, analyze,
-      and respond to intrusions in real-time. It integrates cutting-edge technologies from **AI**, **Networking**, **Cybersecurity**, **Frontend**,
-      and **Backend** to create one cohesive, scalable, secure, and innovative system.
-    </p>
+  <section id="about" class="max-w-6xl mx-auto py-20 px-6 section-animate z-10">
+    <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-cyan-300 pb-2 heading-font heading-underline">About</h2>
+        <p class="leading-relaxed text-lg text-gray-200">
+          The Smart Intrusion Detection System (SIDS) is a graduation project designed to detect, analyze,
+          and respond to intrusions in real-time. It integrates cutting-edge technologies from AI, Networking, Cybersecurity, Frontend,
+          and Backend to create one cohesive, scalable, secure, and innovative system.
+        </p>
+      </div>
+      <div>
+        <img src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=SIDS+Project" alt="SIDS Project Logo" class="w-full rounded-2xl shadow-xl transition-all duration-500 hover:scale-105" />
+      </div>
+    </div>
   </section>
 
   <!-- Domains Section -->
-  <section id="domains" class="py-20 px-6 bg-black/40">
-    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Domains</h2>
+  <section id="domains" class="py-20 px-6 glassmorphism z-10">
+    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300 heading-font heading-underline">Domains</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <!-- Cybersecurity Card -->
-      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism">
         <div class="text-3xl text-cyan-200 mb-4">🛡️</div>
-        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Cybersecurity</h4>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Cybersecurity</h4>
         <p class="text-gray-300">Secures data, applies threat analysis, and ensures safe communication across all system layers.</p>
       </div>
       <!-- Networking Card -->
-      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 100ms;">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 100ms;">
         <div class="text-3xl text-cyan-200 mb-4">🌐</div>
-        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Networking</h4>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Networking</h4>
         <p class="text-gray-300">Monitors and analyzes network traffic in real-time to detect anomalous behavior and potential threats.</p>
       </div>
       <!-- AI Card -->
-      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 200ms;">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 200ms;">
         <div class="text-3xl text-cyan-200 mb-4">🧠</div>
-        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Artificial Intelligence</h4>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Artificial Intelligence</h4>
         <p class="text-gray-300">Leverages advanced machine learning models to predict and detect threats with high accuracy.</p>
       </div>
       <!-- Frontend Card -->
-      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 300ms;">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 300ms;">
         <div class="text-3xl text-cyan-200 mb-4">🖥️</div>
-        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Frontend</h4>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Frontend</h4>
         <p class="text-gray-300">Provides an intuitive and responsive dashboard for real-time monitoring and easy management of alerts.</p>
       </div>
       <!-- Backend Card -->
-      <div class="bg-white/10 p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate" style="transition-delay: 400ms;">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 400ms;">
         <div class="text-3xl text-cyan-200 mb-4">⚙️</div>
-        <h4 class="text-2xl font-semibold text-cyan-200 mb-2">Backend</h4>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Backend</h4>
         <p class="text-gray-300">Serves as the core engine, processing data, integrating AI models, and powering the entire system.</p>
       </div>
     </div>
   </section>
 
-  <!-- Project Idea Section -->
-  <section id="idea" class="max-w-6xl mx-auto py-20 px-6 section-animate">
-    <h2 class="text-3xl font-bold mb-6 text-cyan-300 border-b-2 border-cyan-400 pb-2">Project Idea</h2>
-    <p class="leading-relaxed text-lg text-gray-200">
-      SIDS leverages AI to proactively detect anomalies in network traffic. It combines real-time monitoring,
-      automated responses, and a user-friendly interface to empower organizations to strengthen their cybersecurity posture
-      and mitigate threats before they escalate.
+  <!-- Key Features Section -->
+  <section id="features" class="max-w-6xl mx-auto py-20 px-6 section-animate z-10">
+    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300 heading-font heading-underline">Key Features</h2>
+    <p class="text-center text-lg text-gray-200 mb-12 max-w-2xl mx-auto">
+      Our system provides a robust set of features to ensure comprehensive security and ease of use.
     </p>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism">
+        <i class="fa-solid fa-gauge-high text-4xl text-cyan-200 mb-4"></i>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Real-time Monitoring</h4>
+        <p class="text-gray-300">Instantly visualize all network traffic and identify anomalies as they occur.</p>
+      </div>
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 100ms;">
+        <i class="fa-solid fa-robot text-4xl text-cyan-200 mb-4"></i>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Automated Threat Response</h4>
+        <p class="text-gray-300">AI-driven responses to mitigate threats without the need for human intervention.</p>
+      </div>
+      <div class="p-8 rounded-2xl shadow-xl transition-all duration-300 card-hover section-animate glassmorphism" style="transition-delay: 200ms;">
+        <i class="fa-solid fa-file-invoice text-4xl text-cyan-200 mb-4"></i>
+        <h4 class="text-2xl font-semibold text-cyan-200 mb-2 heading-font">Detailed Reporting</h4>
+        <p class="text-gray-300">Generate comprehensive reports on all security incidents and system performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Document Section -->
+  <section id="document" class="max-w-6xl mx-auto py-20 px-6 section-animate z-10">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-300 pb-2 heading-font heading-underline">Project Document</h2>
+    <div class="aspect-w-16 aspect-h-9">
+      <!-- This iframe displays the PDF document without download functionality -->
+      <iframe src="Smart Intrusion Detection System.pdf" class="w-full h-[80vh] rounded-2xl shadow-xl glassmorphism border border-cyan-500" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <!-- Project Idea Section -->
+  <section id="idea" class="max-w-6xl mx-auto py-20 px-6 section-animate z-10">
+    <div class="md:grid md:grid-cols-2 md:gap-16 items-center">
+      <div>
+        <img src="https://placehold.co/600x400/0F172A/FFFFFF?text=AI+and+Analytics" alt="AI and Analytics" class="w-full rounded-2xl shadow-xl transition-all duration-500 hover:scale-105" />
+      </div>
+      <div class="md:text-right">
+        <h2 class="text-3xl font-bold mb-6 text-cyan-300 pb-2 heading-font heading-underline md:text-right">Project Idea</h2>
+        <p class="leading-relaxed text-lg text-gray-200">
+          SIDS leverages AI to proactively detect anomalies in network traffic. It combines real-time monitoring,
+          automated responses, and a user-friendly interface to empower organizations to strengthen their cybersecurity posture
+          and mitigate threats before they escalate.
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- Objectives Section -->
-  <section id="objectives" class="py-20 px-6 bg-black/40">
-    <h2 class="text-3xl font-bold mb-6 text-center text-cyan-300">Objectives</h2>
+  <section id="objectives" class="py-20 px-6 glassmorphism z-10">
+    <h2 class="text-3xl font-bold mb-6 text-center text-cyan-300 heading-font heading-underline">Objectives</h2>
     <ul class="list-none space-y-4 max-w-3xl mx-auto text-lg text-gray-200">
       <li class="flex items-start section-animate">
         <span class="text-cyan-300 text-2xl mr-4">✓</span>
-        <span>**Real-Time Threat Detection:** Develop a system capable of identifying threats as they happen.</span>
+        <span>Real-Time Threat Detection: Develop a system capable of identifying threats as they happen.</span>
       </li>
       <li class="flex items-start section-animate" style="transition-delay: 100ms;">
         <span class="text-cyan-300 text-2xl mr-4">✓</span>
-        <span>**Scalability:** Ensure the system can be seamlessly scaled for networks of any size.</span>
+        <span>Scalability: Ensure the system can be seamlessly scaled for networks of any size.</span>
       </li>
       <li class="flex items-start section-animate" style="transition-delay: 200ms;">
         <span class="text-cyan-300 text-2xl mr-4">✓</span>
-        <span>**Intuitive Dashboard:** Create a user-friendly interface for easy monitoring and alerts.</span>
+        <span>Intuitive Dashboard: Create a user-friendly interface for easy monitoring and alerts.</span>
       </li>
       <li class="flex items-start section-animate" style="transition-delay: 300ms;">
         <span class="text-cyan-300 text-2xl mr-4">✓</span>
-        <span>**Automation:** Utilize AI to automate threat detection and response processes.</span>
+        <span>Automation: Utilize AI to automate threat detection and response processes.</span>
       </li>
       <li class="flex items-start section-animate" style="transition-delay: 400ms;">
         <span class="text-cyan-300 text-2xl mr-4">✓</span>
-        <span>**Seamless Integration:** Achieve flawless integration across all five project domains.</span>
+        <span>Seamless Integration: Achieve flawless integration across all five project domains.</span>
       </li>
     </ul>
   </section>
 
   <!-- Team Section -->
-  <section id="team" class="py-20 px-6 section-animate">
-    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Our Team</h2>
-    <div id="teamList" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-center"></div>
+  <section id="team" class="py-20 px-6 section-animate z-10">
+    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300 heading-font heading-underline">Our Team</h2>
+    <div id="teamList" class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full lg:w-[90%] mx-auto mb-8">
+        <!-- Cybersecurity -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0">
+          <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300 heading-font">Cybersecurity</h3>
+          <ul class="space-y-3">
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">AbdulRhman AbdulGhaffar</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">AbdulRhman Fathy</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Heba Ashraf</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Fatima ElSaid</li>
+          </ul>
+        </div>
+        <!-- Network -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0">
+          <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300 heading-font">Network</h3>
+          <ul class="space-y-3">
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">AbdulRhman Mohammed</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Ahmed Galal</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Ibrahim Mohammed</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Farah Waled</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Toqa Abdulmaksoud</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full lg:w-[90%] mx-auto mb-8">
+        <!-- Frontend -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0">
+          <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300 heading-font">Frontend</h3>
+          <ul class="space-y-3">
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Shimaa Fouad</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Wafaa Mohammed</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Aya Hany</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Rofaida Ali</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Sheeren Hany</li>
+          </ul>
+        </div>
+        <!-- Backend -->
+        <div class="w-full md:w-1/2 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0">
+          <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300 heading-font">Backend</h3>
+          <ul class="space-y-3">
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Hisham Mohammed</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Yousef Elsaid</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Shahd Reda</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Israa Ibrahim</li>
+          </ul>
+        </div>
+      </div>
+      <!-- AI Team -->
+      <div class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full lg:w-[90%] mx-auto justify-center">
+        <div class="w-full md:w-1/2 p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl flex-shrink-0">
+          <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300 heading-font">AI</h3>
+          <ul class="space-y-3">
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">AbdulRhman Yousry</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Mahmoud Alhaz</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Sally Gamal</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Sara Ibrahim</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Sara Anwar</li>
+            <li class="p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105">Sara Awad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Final Image / Vision Section -->
-  <section id="vision" class="py-20 flex flex-col items-center text-center px-6 bg-black/40 section-animate">
+  <section id="vision" class="py-20 flex flex-col items-center text-center px-6 glassmorphism z-10">
     <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png"
       alt="Delta Vision" class="w-72 md:w-96 mb-6 rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105"/>
-    <p class="text-xl md:text-3xl font-semibold text-cyan-300 text-shadow-effect">
+    <p class="text-xl md:text-3xl font-semibold text-cyan-300 text-shadow-effect heading-font">
       Innovating with AI, Security, and Technology — Delta Graduation Project 2025.
     </p>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 section-animate">
-    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300">Get in Touch</h2>
+  <section id="contact" class="py-20 px-6 section-animate z-10">
+    <h2 class="text-3xl font-bold mb-10 text-center text-cyan-300 heading-font heading-underline">Get in Touch</h2>
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
       
       <!-- Contact Form -->
-      <form class="space-y-6 bg-white/10 p-8 rounded-3xl shadow-lg border border-cyan-500">
-        <input type="text" placeholder="Your Name"
-          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
-        <input type="email" placeholder="Your Email"
-          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
-        <textarea placeholder="Your Message" rows="6"
-          class="w-full p-4 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+      <form action="https://formspree.io/f/your_form_id_here" method="POST" class="space-y-6 glassmorphism p-8 rounded-3xl shadow-lg border border-cyan-500">
+        <!-- Add a hidden field that will be included in the form submission -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission!" />
+        <input type="text" name="name" placeholder="Your Name"
+          class="w-full p-4 rounded-xl glassmorphism text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+        <input type="email" name="email" placeholder="Your Email"
+          class="w-full p-4 rounded-xl glassmorphism text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"/>
+        <textarea name="message" placeholder="Your Message" rows="6"
+          class="w-full p-4 rounded-xl glassmorphism text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
         <button type="submit"
           class="relative w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden shine-effect">
           Send Message
@@ -210,10 +359,16 @@
       <!-- Contact Info -->
       <div class="flex flex-col items-center justify-center text-center space-y-6 text-gray-200">
         <p class="text-lg leading-relaxed">We’d love to hear from you! Connect with us through email or follow our work on GitHub & LinkedIn.</p>
-        <div class="flex space-x-8 text-4xl">
-          <a href="mailto:abdulrhman.abdulghaffar001@gmail.com" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">📧</a>
-          <a href="https://github.com/" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">💻</a>
-          <a href="https://linkedin.com/" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">🔗</a>
+        <div id="socialIcons" class="flex space-x-8 text-4xl">
+          <a href="mailto:abdulrhman.abdulghaffar001@gmail.com" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/AbdulRhmanAbdulGhaffar" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/abdulrhmanabdulghaffar/" target="_blank" class="hover:text-cyan-300 transition-colors duration-300">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
 
@@ -221,26 +376,120 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900/70 text-gray-400 text-center py-8">
+  <footer class="bg-gray-900/70 text-gray-400 text-center py-8 z-10">
     © 2025 Delta University – Smart Intrusion Detection System
   </footer>
 
   <script>
-    // Team Members
-    const members = [
-      "AbdulRhman AbdulGhaffar", "AbdulRhman Fathy", "AbdulRhman Mohammed", "AbdulRhman Yousry",
-      "Mahmoud Alhaz", "Ahmed Galal", "Ibrahim Mohammed", "Hisham Mohammed", "Yousef Elsaid",
-      "Shimaa Fouad", "Heba Ashraf", "Wafaa Mohammed", "Aya Hany", "Sara Anwar", "Shahd Reda",
-      "Sara Ibrahim", "Fatima Elsaid", "Israa Ibrahim", "Rofaida Ali", "Sally Gamal", "Sheeren Hany", "Toqa Abdulmaksoud"
-    ];
-    const teamList = document.getElementById("teamList");
-    members.forEach(name => {
-      const card = document.createElement("div");
-      card.className = "p-6 bg-white/10 text-white rounded-xl shadow-lg text-lg font-semibold transform transition-all duration-300 opacity-0 card-hover";
-      card.textContent = name;
-      teamList.appendChild(card);
-    });
+    // Constants for particle animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particlesArray;
+    let w, h;
+    const maxParticles = 150;
 
+    // Class for each particle
+    class Particle {
+      constructor(x, y, directionX, directionY, size, color) {
+        this.x = x;
+        this.y = y;
+        this.directionX = directionX;
+        this.directionY = directionY;
+        this.size = size;
+        this.color = color;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+      update() {
+        if (this.x > w || this.x < 0) {
+          this.directionX = -this.directionX;
+        }
+        if (this.y > h || this.y < 0) {
+          this.directionY = -this.directionY;
+        }
+        this.x += this.directionX;
+        this.y += this.directionY;
+        this.draw();
+      }
+    }
+
+    // Initialize particles
+    function init() {
+      w = window.innerWidth;
+      h = document.body.scrollHeight;
+      canvas.width = w;
+      canvas.height = h;
+      particlesArray = [];
+      for (let i = 0; i < maxParticles; i++) {
+        let size = (Math.random() * 2) + 1;
+        let x = (Math.random() * ((w - size * 2) - (size * 2)) + size * 2);
+        let y = (Math.random() * ((h - size * 2) - (size * 2)) + size * 2);
+        let directionX = (Math.random() * 0.5) - 0.25;
+        let directionY = (Math.random() * 0.5) - 0.25;
+        let color = 'rgba(255, 255, 255, ' + (Math.random() * 0.4 + 0.1) + ')';
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+      }
+    }
+
+    // Animation loop for particles
+    function animateParticles() {
+      requestAnimationFrame(animateParticles);
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+      }
+    }
+
+    // Team Members organized by domain
+    const teams = {
+        'Cybersecurity': ["AbdulRhman AbdulGhaffar", "AbdulRhman Fathy", "Heba Ashraf", "Fatima ElSaid"],
+        'Network': ["AbdulRhman Mohammed", "Ahmed Galal", "Ibrahim Mohammed", "Farah Waled", "Toqa Abdulmaksoud"],
+        'Frontend': ["Shimaa Fouad", "Wafaa Mohammed", "Aya Hany", "Rofaida Ali", "Sheeren Hany"],
+        'Backend': ["Hisham Mohammed", "Yousef Elsaid", "Shahd Reda", "Israa Ibrahim"],
+        'AI': ["AbdulRhman Yousry", "Mahmoud Alhaz", "Sally Gamal", "Sara Ibrahim", "Sara Anwar", "Sara Awad"]
+    };
+
+    const teamListContainer = document.getElementById("teamList");
+    
+    // Clear previous team lists to prevent duplicates
+    teamListContainer.innerHTML = '';
+    
+    // Dynamically generate the team cards with the new horizontal layout
+    const teamsToGroup = [
+      ['Cybersecurity', 'Network'],
+      ['Frontend', 'Backend'],
+      ['AI']
+    ];
+
+    teamsToGroup.forEach((group, index) => {
+      const groupContainer = document.createElement("div");
+      groupContainer.className = "flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0 w-full lg:w-[90%] mx-auto";
+
+      group.forEach(domain => {
+        const teamCard = document.createElement("div");
+        teamCard.className = "w-full p-8 rounded-2xl glassmorphism border border-blue-500 shadow-xl section-animate flex-1";
+        const heading = document.createElement("h3");
+        heading.className = "text-2xl font-semibold text-center mb-6 text-blue-300 heading-font";
+        heading.textContent = domain;
+        const ul = document.createElement("ul");
+        ul.className = "space-y-3";
+        teams[domain].forEach(name => {
+          const li = document.createElement("li");
+          li.className = "p-3 bg-white/10 rounded-lg text-white font-semibold text-center transition-all duration-300 hover:scale-105";
+          li.textContent = name;
+          ul.appendChild(li);
+        });
+        teamCard.appendChild(heading);
+        teamCard.appendChild(ul);
+        groupContainer.appendChild(teamCard);
+      });
+      teamListContainer.appendChild(groupContainer);
+    });
+    
     // Animate logo on page load
     anime({
       targets: "#logo",
@@ -275,18 +524,56 @@
               easing: "easeOutExpo"
             });
           }
+          // Animate underline on headings
+          const heading = target.querySelector('.heading-underline');
+          if (heading) {
+            heading.classList.add('animate-underline');
+          }
           // Unobserve the element after animation
           observer.unobserve(target);
         }
       });
     }, {
       rootMargin: "0px",
-      threshold: 0.2 // Trigger when 20% of the element is visible
+      threshold: 0.2
     });
 
     // Observe all sections with the 'section-animate' class
     document.querySelectorAll('.section-animate').forEach(section => {
       observer.observe(section);
+    });
+
+    // Animate social icons on hover
+    document.querySelectorAll('#socialIcons a').forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        anime({
+          targets: icon,
+          scale: 1.2,
+          rotate: "10deg",
+          duration: 300,
+          easing: "easeOutQuad"
+        });
+      });
+      icon.addEventListener('mouseleave', () => {
+        anime({
+          targets: icon,
+          scale: 1,
+          rotate: "0deg",
+          duration: 300,
+          easing: "easeOutQuad"
+        });
+      });
+    });
+
+    window.onload = function() {
+      init();
+      animateParticles();
+    };
+    window.addEventListener('resize', () => {
+      w = window.innerWidth;
+      h = document.body.scrollHeight;
+      canvas.width = w;
+      canvas.height = h;
     });
   </script>
 </body>
