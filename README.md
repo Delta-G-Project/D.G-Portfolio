@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Smart Intrusion Detection System (SIDS)</b><br>
-  <i>Innovating with AI, Security, and Technology — Delta Graduation Project 2025</i>
+  <B>Innovating with AI, Security, and Technology — Delta Graduation Project 2025</B>
 </p>
 
 <p align="center">
@@ -86,7 +86,7 @@ It combines **AI, Cybersecurity, Networking, Frontend, and Backend** into one ec
   <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" alt="Vision" width="400"/>
 </p>
 
-<p align="center"><i>“Innovating with AI, Security, and Technology — Delta Graduation Project 2025.”</i></p>
+<p align="center"><B>Innovating with AI, Security, and Technology — Delta Graduation Project 2025.</B></p>
 
 <p align="center">
   Made with ❤️ by the Delta University Team
