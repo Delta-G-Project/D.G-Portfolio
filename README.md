@@ -1,100 +1,109 @@
-# 🚀 Delta Graduation Project Portfolio
-
-**Smart Intrusion Detection System (SIDS)** – Delta University Graduation 2025
-
----
+# 🚀 Delta Graduation Project 2025  
 
 <p align="center">
-  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Delta Logo" width="150"/>
+  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Delta Logo" width="180"/>
 </p>
 
 <p align="center">
-  <em>Innovating with AI, Security, and Technology — Delta Graduation Project 2025.</em>
+  <b>Smart Intrusion Detection System (SIDS)</b><br>
+  <i>Innovating with AI, Security, and Technology — Delta Graduation Project 2025</i>
+</p>
+
+<p align="center">
+  <a href="https://delta-g-project.github.io/D.G-Portfolio/"><img src="https://img.shields.io/badge/Live%20Demo-Online-brightgreen?style=for-the-badge&logo=github"></a>
+  <img src="https://img.shields.io/badge/Status-Active-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
 </p>
 
 ---
 
-## 🧠 About This Portfolio  
-This portfolio showcases a **single-page, cinematic web experience** for the SIDS project. Built with modern tech and visuals:
+## 📖 Overview  
+The **Smart Intrusion Detection System (SIDS)** is an advanced graduation project built by Delta University students.  
+It combines **AI, Cybersecurity, Networking, Frontend, and Backend** into one ecosystem to provide **real-time intrusion detection and defense**.  
 
-- Animated **intro sequence** with matrix-style Hacker theme.
-- **Cybersecurity-style background** with flowing network grid effect.
-- Animated **logo reveal**, section scroll animations, and modal welcome message.
-- Clean layout with Navbar, Domain cards, Team sections, Features, Vision, Contact form.
-
-Live demo available at:  
-👉 [delta-g-project.github.io/D.G-Portfolio](https://delta-g-project.github.io/D.G-Portfolio/)
+👉 [**View the Portfolio Website**](https://delta-g-project.github.io/D.G-Portfolio/)  
 
 ---
 
-## 🚀 Key Technologies  
-| Library / Tool    | Purpose                      |
-|-------------------|-------------------------------|
-| **Tailwind CSS**  | Modern responsive UI styling  |
-| **Anime.js**      | Smooth animations & transitions|
-| **Font Awesome**  | Iconography for clarity        |
-| **Formspree**     | Handles Contact form submissions |
-| **Custom CSS**    | Pixel-perfect glow, background, and modal effects |
+## ✨ Core Features  
+- ⚡ **Live Intrusion Monitoring** – detect anomalies in real time  
+- 🤖 **AI-Powered Detection** – predictive analysis & anomaly recognition  
+- 🔐 **Cyber Defense Layers** – ensure confidentiality, integrity, availability  
+- 📊 **Interactive Dashboard** – visualize and control system activities  
+- 🌐 **Network Traffic Analysis** – proactive detection of suspicious traffic  
+- 🚀 **Scalable Infrastructure** – adaptable to enterprise-level systems  
 
 ---
 
-## 🎨 Features & Sections  
-
-- **Animated Intro & Matrix Loading Screen**
-- Sticky **Navbar** with smooth scroll navigation
-- **Domains** section featuring Cybersecurity, Network, AI, Frontend, Backend cards with hover effects
-- **Features** overview animated grid with icons
-- Embedded **Project Document** preview via `<iframe>`
-- **Team Section** segmented by domain (Cybersecurity / Network / AI / Frontend / Backend)
-- **Vision Section** with stylized image and tagline
-- Fully functional **Contact Form** (via Formspree) and clickable icons (Email, GitHub, LinkedIn)
-- **Footer** with project copyright
+## 🛠️ Tech Stack  
+- 🎨 **Tailwind CSS** → Styling & responsive design  
+- 🎥 **Anime.js** → Animations & transitions  
+- 🖼️ **Font Awesome** → Icons  
+- 📩 **Formspree** → Contact form handling  
+- ⚡ **HTML5 + JS** → Core web technologies  
 
 ---
 
 
 ---
 
-## 👨‍💻 Team by Domain
+## 👨‍💻 Our Team  
 
-| Domain           | Team Members                                      |
-|------------------|---------------------------------------------------|
-| **Cybersecurity**| AbdulRhman AbdulGhaffar, AbdulRhman Fathy, Heba Ashraf, Fatima ElSaid |
-| **Network**      | AbdulRhman Mohammed, Ahmed Galal, Ibrahim Mohammed, Farah Waled, Toqa Abdulmaksoud |
-| **Frontend**     | Shimaa Fouad, Wafaa Mohammed, Aya Hany, Rofaida Ali, Sheeren Hany |
-| **Backend**      | Hisham Mohammed, Yousef Elsaid, Shahd Reda, Israa Ibrahim |
-| **Artificial Intelligence (AI)** | AbdulRhman Yousry, Mahmoud Alhaz, Sally Gamal, Sara Ibrahim, Sara Anwar, Sara Awad |
+<div align="center">
 
----
+| Cybersecurity | Network | Frontend | Backend | AI |
+|---------------|---------|----------|---------|----|
+| AbdulRhman AbdulGhaffar | AbdulRhman Mohammed | Shimaa Fouad | Hisham Mohammed | AbdulRhman Yousry |
+| AbdulRhman Fathy | Ahmed Galal | Wafaa Mohammed | Yousef Elsaid | Mahmoud Alhaz |
+| Heba Ashraf | Ibrahim Mohammed | Aya Hany | Shahd Reda | Sally Gamal |
+| Fatima ElSaid | Toqa Abdulmaksoud | Rofaida Ali | Israa Ibrahim | Sara Ibrahim |
+| | Farah Waled | Sheeren Hany | | Sara Anwar |
+| | | | | Sara Awad |
 
-## 📸 Visual Preview
-
-### Logo & Title
-![Logo](https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png)
-
-### Vision / Final Image
-![Vision](https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png)
+</div>
 
 ---
 
-## 📬 Contact & Contribution
+## 📸 Visuals  
 
-Want to connect or contribute?
+### 🔹 Project Logo  
+<p align="center">
+  <img src="https://i.postimg.cc/rwJ6qMM3/Chat-GPT-Image-Sep-3-2025-02-06-48-AM.png" alt="Logo" width="200"/>
+</p>
 
-- 📧 Email: **abdulrhman.abdulghaffar001@gmail.com**
-- 💼 GitHub: [@AbdulRhmanAbdulGhaffar](https://github.com/AbdulRhmanAbdulGhaffar)
-- 🔗 LinkedIn: [AbdulRhman AbdulGhaffar](https://linkedin.com/in/abdulrhmanabdulghaffar/)
+### 🔹 Vision  
+<p align="center">
+  <img src="https://i.postimg.cc/QM4RWmBq/Chat-GPT-Image-Sep-3-2025-02-04-26-AM.png" alt="Vision" width="400"/>
+</p>
 
-To contribute:
-- Fork the repo
-- Create feature branch
-- Open pull request with a concise summary
-
----
-
-## 📜 License  
-This project is licensed under the **MIT License** – feel free to use or adapt with attribution.
+<p align="center"><i>“Innovating with AI, Security, and Technology — Delta Graduation Project 2025.”</i></p>
 
 ---
 
-Made with passion by the Delta University team ⚡  
+## 📑 Documentation  
+📄 [Smart Intrusion Detection System PDF](./docs/Smart%20Intrusion%20Detection%20System.pdf)  
+
+---
+
+## 🚦 Roadmap  
+- [x] Build core website with Tailwind & Anime.js  
+- [x] Add animated intro + logo reveal  
+- [x] Integrate documentation & visuals  
+- [ ] Enhance dashboard interactivity  
+- [ ] Deploy full-featured backend APIs  
+- [ ] Expand AI anomaly detection model  
+
+---
+
+## 📬 Contact  
+📧 **abdulrhman.abdulghaffar001@gmail.com**  
+💻 GitHub: [Delta Org](https://github.com/)  
+🔗 LinkedIn: [Delta Team](https://linkedin.com/)  
+
+---
+
+
+<p align="center">
+  Made with ❤️ by the Delta University Team
+</p>
+
